@@ -449,3 +449,91 @@
 .destination-card:nth-child(4) { animation-delay: 0.4s; }
 .destination-card:nth-child(5) { animation-delay: 0.5s; }
 .destination-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Day Card Images for Itinerary Pages */
+.day-image {
+    width: 100%;
+    height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.day-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.day-card:hover .day-image img {
+    transform: scale(1.05);
+}
+
+.day-image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    color: white;
+    padding: 1rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Enhanced Day Card with Image */
+.day-card-with-image {
+    background: #fff;
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    position: relative;
+    border-left: 5px solid var(--primary-color);
+    transition: all 0.4s ease;
+}
+
+.day-card-with-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+/* Image Gallery for Day Cards */
+.day-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.day-gallery.single {
+    grid-template-columns: 1fr;
+}
+
+.day-gallery img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.4s ease;
+}
+
+.day-gallery img:hover {
+    transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+    .day-image {
+        height: 180px;
+    }
+    
+    .day-gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .day-gallery img {
+        height: 140px;
+    }
+}
