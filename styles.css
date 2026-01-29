@@ -191,7 +191,7 @@ footer .logo img {
     transition: all 0.3s ease;
 }
 
-/* Hero Section */
+/* Hero Section with Slideshow */
 .hero {
     position: relative;
     height: 100vh;
@@ -201,62 +201,89 @@ footer .logo img {
     overflow: hidden;
 }
 
-/* Animated Background */
-.hero-background {
+/* Image Slideshow */
+.hero-slideshow {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: -2;
-    overflow: hidden;
 }
 
-.hero-image {
+.hero-slideshow .slide {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
-    animation: zoomIn 20s ease-in-out infinite alternate;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transform: scale(1.1);
+    transition: opacity 1.5s ease-in-out, transform 8s ease-out;
 }
 
-.hero-particles {
+.hero-slideshow .slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Floating Wildlife Icons */
+.floating-icons {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: 
-        radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.3), transparent),
-        radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.2), transparent),
-        radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.4), transparent),
-        radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.3), transparent),
-        radial-gradient(2px 2px at 160px 30px, rgba(255,255,255,0.2), transparent);
-    background-repeat: repeat;
-    background-size: 200px 100px;
-    animation: sparkle 3s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: 1;
 }
 
-@keyframes zoomIn {
-    0% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(1.1);
-    }
+.float-icon {
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    color: rgba(255, 255, 255, 0.15);
+    font-size: 2.5rem;
+    animation: floatIcon 6s ease-in-out infinite;
+    animation-delay: var(--delay);
 }
 
-@keyframes sparkle {
-    0% {
-        opacity: 0.3;
-        transform: translateY(0px);
-    }
-    100% {
-        opacity: 0.8;
-        transform: translateY(-10px);
-    }
+@keyframes floatIcon {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+/* Slide Indicators */
+.slide-indicators {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 10;
+}
+
+.slide-indicators .indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.slide-indicators .indicator.active {
+    background: var(--primary-color);
+    transform: scale(1.3);
+    border-color: white;
+}
+
+.slide-indicators .indicator:hover {
+    background: rgba(255, 255, 255, 0.8);
 }
 
 .hero::after {
@@ -290,28 +317,180 @@ footer .logo img {
     animation: fadeInUp 1s ease;
 }
 
-.hero-title {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+/* Hero Badge */
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 10px 24px;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    animation: fadeInDown 1s ease 0.3s both;
 }
 
-.hero-subtitle {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+.hero-badge i {
+    color: var(--primary-color);
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-title {
+    font-size: 3.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+    line-height: 1.1;
+}
+
+.hero-title .title-line {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
     opacity: 0.95;
 }
 
+.hero-title .title-highlight {
+    display: block;
+    background: linear-gradient(135deg, #fff 0%, var(--primary-color) 50%, #fff 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.95;
+    line-height: 1.7;
+}
+
+/* Hero Features List */
+.hero-features {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.hero-feature {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.hero-feature i {
+    color: var(--primary-color);
+}
 
 .hero-buttons {
     display: flex;
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.hero-buttons .btn i {
+    margin-right: 8px;
+}
+
+/* Glowing Button Effect */
+.btn-glow {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-glow:hover::before {
+    left: 100%;
+}
+
+/* Trust Bar Section */
+.trust-bar {
+    background: var(--secondary-color);
+    padding: 1.2rem 0;
+    overflow: hidden;
+}
+
+.trust-items {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 500;
+    opacity: 0.95;
+    transition: all 0.3s ease;
+}
+
+.trust-item:hover {
+    transform: translateY(-2px);
+    opacity: 1;
+}
+
+.trust-item i {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .trust-items {
+        justify-content: center;
+    }
+    .trust-item {
+        font-size: 0.85rem;
+    }
+    .trust-item span {
+        display: none;
+    }
+    .trust-item i {
+        font-size: 1.5rem;
+    }
 }
 
 .btn {
@@ -402,6 +581,27 @@ section {
     margin: 0 auto;
 }
 
+/* Section Tags */
+.section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, rgba(201, 184, 130, 0.15) 0%, rgba(107, 142, 35, 0.15) 100%);
+    color: var(--secondary-color);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid rgba(107, 142, 35, 0.2);
+}
+
+.section-tag i {
+    color: var(--primary-color);
+}
+
 /* Destinations Section */
 .destinations {
     background: var(--bg-light);
@@ -420,11 +620,41 @@ section {
     box-shadow: var(--shadow);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
+    position: relative;
 }
 
 .destination-card:hover {
     transform: translateY(-12px);
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Badges */
+.card-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #d4a853 100%);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 25px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 5;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-badge.adventure {
+    background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+}
+
+.card-badge.beach {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+}
+
+.card-badge.wildlife {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #2d4a2d 100%);
 }
 
 .destination-image {
@@ -494,6 +724,36 @@ section {
 .duration {
     font-size: 0.9rem;
     color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.duration i {
+    color: var(--secondary-color);
+    font-size: 0.85rem;
+}
+
+/* Destination Rating */
+.destination-rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-top: 0.5rem;
+}
+
+.destination-rating i {
+    color: #f59e0b;
+    font-size: 0.8rem;
+}
+
+.destination-rating span {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #92400e;
 }
 
 .destination-btn {
