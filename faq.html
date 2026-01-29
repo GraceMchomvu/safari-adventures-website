@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions - Triple Lions Expeditions</title>
+    <meta name="description"
+        content="Common questions about Tanzania safaris, Zanzibar holidays, visas, packing, and travel safety.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        .faq-hero {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.7) 100%),
+                url('https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover;
+            padding: 180px 0 100px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .faq-section {
+            padding: 5rem 0;
+            background-color: #f8fafc;
+        }
+
+        .faq-category {
+            max-width: 900px;
+            margin: 0 auto 4rem;
+        }
+
+        .category-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .category-header h2 {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .category-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .faq-question {
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            background: white;
+            border: none;
+            width: 100%;
+            text-align: left;
+            transition: color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: var(--secondary-color);
+        }
+
+        .faq-question.active {
+            color: var(--primary-color);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .toggle-icon {
+            width: 24px;
+            height: 24px;
+            position: relative;
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+
+        .toggle-icon::before,
+        .toggle-icon::after {
+            content: '';
+            position: absolute;
+            background-color: currentColor;
+            transition: transform 0.3s ease;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .toggle-icon::before {
+            width: 12px;
+            height: 2px;
+        }
+
+        .toggle-icon::after {
+            width: 2px;
+            height: 12px;
+        }
+
+        .faq-question.active .toggle-icon::after {
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 2rem;
+            opacity: 0;
+            transition: all 0.3s ease-out;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .faq-question.active+.faq-answer {
+            padding: 1.5rem 2rem;
+            max-height: 1000px;
+            opacity: 1;
+        }
+
+        .faq-answer ul {
+            padding-left: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .faq-answer li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .faq-question {
+                padding: 1.25rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            .faq-hero {
+                padding: 150px 0 80px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="TES1.png" alt="Triple Lions Expeditions" class="logo-img">
+                    <div class="logo-text">
+                        <h2>Triple Lions Expeditions</h2>
+                        <span>Tanzania Safari Specialists</span>
+                    </div>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="faq-hero">
+        <div class="container">
+            <h1>Frequently Asked Questions</h1>
+            <p>Everything you need to know about your Tanzania & Zanzibar adventure</p>
+        </div>
+    </section>
+
+    <!-- FAQ Content -->
+    <section class="faq-section">
+        <div class="container">
+            <!-- Tanzania Safaris Section -->
+            <div class="faq-category">
+                <div class="category-header">
+                    <h2><i class="fas fa-paw" style="margin-right: 10px; color: var(--primary-color);"></i>Tanzania
+                        Safaris</h2>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What is the best time to visit Tanzania?
+                        <div class="toggle-icon"></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The dry season (June to October) is the best time to visit Tanzania. The wildlife comes
+                            together at a few water sources and the trails are accessible. If you are coming to see bird
+                            species, November to May is the best time. However, the season is wet, but the scene is
+                            picturesque.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What are the famous destinations in Tanzania?
+                        <div class="toggle-icon"></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Serengeti National Park, Ngorongoro Crater, and Mount Kilimanjaro are the most captivating
+                            destinations in Tanzania. Serengeti hosts the Great Migration, the Big Five, and diverse
+                            wildlife. The Ngorongoro Crater is the world's largest unbroken caldera and is well-known
+                            for its abundance of species. Mount Kilimanjaro is Africa's highest peak. With its height
+                            being 5,895 meters above sea level, Kilimanjaro is a challenging peak worth going after.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is Mount Kilimanjaro in Kenya or Tanzania?
+                        <div class="toggle-icon"></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Kilimanjaro is in northern Tanzania, near the Kenyan border. However, clear views can be
+                            experienced from the Kenyan side, especially in the Amboseli National Park.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What travel documents do I have to carry on my Tanzania safari?
+                        <div class="toggle-icon"></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>You should carry with you a valid passport and a visa. Your passport should be valid for at
+                            least six months after arrival and should have at least one blank page.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How can I get a Tanzanian visa?
+                        <div class="toggle-icon"></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>You can obtain a visa for Tanzania either through an online application or upon arrival in
+                            the country. Notably, Tanzanian visas are no longer issued by embassies, streamlining the
+                            process for travelers. Instead, applicants are encouraged to utilize the electronic visa
+                            application system.</p>
+                        <p>You will require:</p>
+                        <ul>
+                            <li>A passport valid for at least six months with at least 1 blank visa page</li>
+                            <li>Valid return ticket</li>
+                            <li>Evidence of sufficient funds</li>
+                        </ul>
+                        <p>Upon showing off at the On Arrival Visa facility, you will produce a passport, return ticket,
+                            and evidence of sufficient funds to the officers.</p>
+                        <p>An online visa application is highly recommended if your country falls in the Referral Visa
+                            category. After filling out the online form and making payments, you will wait for your
+                            application to be approved. You will get your visa within ten days.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What do I pack for my Tanzanian safari?
+                        <div class="toggle-icon"></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The packing list varies depending on the type of safari. Warm clothes, travel documents such
+                            as a passport, visa, and insurance, any medication, sunglasses, binoculars, and other items
+                            will usually be carried.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is there wildlife all over the country?
+                        <div class="toggle-icon"></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No. Tanzania is indeed home to a diverse wildlife, but you won’t find animals all over the
+                            country. They are found in destinations like Serengeti, Ngorongoro, Selous, and more.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is it safe to travel to Tanzania?
+                        <div class="toggle-icon"></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, the country has a peaceful atmosphere and favorable climate. It is therefore a safe
+                            country to go to.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What is the Great Migration and when can I see it?
+                        <div class="toggle-icon"></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The Great Migration is an annual migration of wildebeest, zebra, and gazelle. It happens in
+                            the Serengeti National Park. The best time to see it is from June to September. The calving
+                            season in January-February is also the best.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Do I need vaccinations for a safari in Tanzania?
+                        <div class="toggle-icon"></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, but this requirement is not for all travelers. Yellow fever vaccination is mandatory if
+                            you’re coming from a country listed as a transmission risk. You are recommended to take
+                            other vaccinations like hepatitis A and B, tetanus, Tuberculosis, and typhoid. Malaria is
+                            endemic in Tanzania. Anti-malarial drugs are a must.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Which payment options do you accept?
+                        <div class="toggle-icon"></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We accept payments made in the US Dollars. We do not accept issued later than 2006 US Dollar
+                            notes.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Are Tanzania safaris good for kids?
+                        <div class="toggle-icon"></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, many tour operators and lodges offer family-friendly options and programs for children.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Zanzibar Safaris Section -->
+            <div class="faq-category">
+                <div class="category-header">
+                    <h2><i class="fas fa-umbrella-beach"
+                            style="margin-right: 10px; color: var(--primary-color);"></i>Zanzibar Safaris</h2>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is Zanzibar safe for travel?
+                        <div class="toggle-icon"></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! Zanzibar is a safer option for travel. It has a friendly climate and peaceful political
+                            atmosphere. The people of Zanzibar are kind and very receptive to visitors.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is Zanzibar worth visiting?
+                        <div class="toggle-icon"></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Zanzibar is a paradise for those seeking adventure and relaxation. It is home to the world’s
+                            exquisite beaches, a perfect setting for relaxation. Zanzibar is also home to significant
+                            cultural and historical sites like Stone Town and Prison Island</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Do I need a visa for Zanzibar?
+                        <div class="toggle-icon"></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, if you don’t have yet. A new visa is not required if you already have one from the
+                            mainland. Zanzibar is a semi-autonomous state of the United Republic of Tanzania.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What should I wear in Zanzibar?
+                        <div class="toggle-icon"></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Zanzibar is conservative with the majority being Muslims. Avoid revealing clothes, especially
+                            when in public places. Wear loose-fitting clothes. Avoid tight-fitting clothes and
+                            see-through outfits in public. Wearing shorts and walking shirtless is not the case when you
+                            are on the beach or at your accommodation.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Which island has the best beaches?
+                        <div class="toggle-icon"></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Unguja Island, the main island of Zanzibar has the best beaches. Nungwi, Kendwa, Matemwe,
+                            Paje, and Jambiani are the most renowned beaches in Unguja.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What vaccinations should I take before traveling to Zanzibar?
+                        <div class="toggle-icon"></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>If you travel to a country where yellow fever is a danger of transmission, you must have a
+                            vaccination certificate. Other recommended vaccinations include yellow fever, tetanus,
+                            hepatitis, cholera, meningitis, and rabies. We also recommend taking anti-malarial drugs.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What is the best time to visit Zanzibar?
+                        <div class="toggle-icon"></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The best time is always the dry season (June to October). The sky is clear and there is
+                            little rain. Therefore, your visit won’t be interrupted.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Are there dolphins in Zanzibar?
+                        <div class="toggle-icon"></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, dolphins are common in Zanzibar. There are iconic sites where you can swim with these
+                            marine creatures. Menai Bay and Mnemba Atoll are the best diving sites with abundant
+                            dolphins.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is it safe to swim in Zanzibar?
+                        <div class="toggle-icon"></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Swimming is possible in Zanzibar. The beaches are a calming setting to swim. Besides
+                            swimming, tourists can enjoy activities like snorkeling, sunbathing, and scuba diving.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is Zanzibar good for honeymooners?
+                        <div class="toggle-icon"></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! Honeymooners can enjoy a lot in Zanzibar. Whether on a luxurious or budget safari,
+                            Zanzibar offers an unforgettable safari experience. It is a perfect romantic gateway to
+                            reconcile with your partner after just getting married. Private beaches offer memorable
+                            beach excursions.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Are there sharks in Zanzibar?
+                        <div class="toggle-icon"></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, Zanzibar is home to reef sharks and whale sharks. The best site to spot sharks is Mafia
+                            Island. These sharks are however harmless. You should be comfortable while swimming with
+                            these creatures.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is alcohol drinking prohibited in Zanzibar?
+                        <div class="toggle-icon"></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No, Zanzibar permits alcohol drinking in designated areas like bars, restaurants, and hotels.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is Zanzibar expensive?
+                        <div class="toggle-icon"></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No, Zanzibar is very affordable. From the cost of its visa to the daily cost, this idyllic
+                            seems to be a budget-friendly place to chill. The average daily cost starts from $23
+                            (budget) to $110 (luxurious).</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How many days to stay in Zanzibar?
+                        <div class="toggle-icon"></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>To enjoy Zanzibar the most, we recommend spending at least three days.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 4rem;">
+                <h3>Have more questions?</h3>
+                <p>Our expert team is here to help you plan your perfect trip.</p>
+                <a href="index.html#contact" class="destination-btn"
+                    style="display: inline-block; width: auto; padding: 1rem 3rem;">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="TES1.png" alt="Triple Lions Expeditions"
+                        style="width: 200px; max-width: 100%; margin-bottom: 1rem;">
+                    <p>Your trusted partner for unforgettable safari and travel experiences in Tanzania and East Africa
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Triple Lions Expeditions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Chat Widget -->
+    <div class="whatsapp-widget" id="whatsappWidget">
+        <a href="https://wa.me/255756336142?text=Hello%20Triple%20Lions%20Expeditions,%20I%20need%20assistance%20with%20planning%20my%20safari"
+            target="_blank" class="whatsapp-notification" id="whatsappNotification">
+            <div class="whatsapp-close" id="closeNotification">&times;</div>
+            <div class="whatsapp-header">
+                <img src="TES1.png" alt="Triple Lions Expeditions" class="whatsapp-avatar">
+                <div class="whatsapp-info">
+                    <h4>Triple Lions Expeditions</h4>
+                    <p>+255 756 336 142</p>
+                </div>
+            </div>
+            <div class="whatsapp-message">
+                <div class="whatsapp-bubble">
+                    <p>👋 Hello! Do you need assistance planning your Tanzania safari adventure?</p>
+                    <span class="whatsapp-time">Just now</span>
+                </div>
+                <div class="whatsapp-click-hint">
+                    <i class="fab fa-whatsapp"></i> Click to chat on WhatsApp
+                </div>
+            </div>
+        </a>
+
+        <button class="whatsapp-float-btn" id="whatsappFloatBtn">
+            <i class="fab fa-whatsapp"></i>
+            <span class="whatsapp-badge">1</span>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // FAQ Accordion Functionality
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const isActive = button.classList.contains('active');
+
+                // Toggle current FAQ
+                button.classList.toggle('active');
+
+                if (!isActive) {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    answer.style.opacity = '1';
+                } else {
+                    answer.style.maxHeight = '0';
+                    answer.style.opacity = '0';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

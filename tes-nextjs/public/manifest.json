@@ -1,0 +1,27 @@
+{
+  "name": "Triple Lions Expeditions",
+  "short_name": "Triple Lions",
+  "description": "Unforgettable safaris, cultural expeditions, and mountain adventures in East Africa",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#f59e0b",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/TES logo HD.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/TES logo HD.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "categories": ["travel", "tourism", "safari", "adventure"],
+  "lang": "en",
+  "dir": "ltr"
+}

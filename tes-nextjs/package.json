@@ -1,0 +1,62 @@
+{
+  "name": "triple-lions-expeditions",
+  "version": "1.0.0",
+  "description": "Professional safari and travel website built with Next.js 15, TypeScript, and Tailwind CSS",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "analyze": "cross-env ANALYZE=true next build"
+  },
+  "dependencies": {
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "framer-motion": "^11.0.0",
+    "lucide-react": "^0.300.0",
+    "next": "15.0.0",
+    "next-themes": "^0.2.1",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "tailwind-merge": "^2.2.0",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.0.0",
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "@tailwindcss/postcss": "^0.0.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.0.0",
+    "eslint-config-next": "15.0.0",
+    "prettier": "^3.0.0",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "keywords": [
+    "safari",
+    "tanzania",
+    "travel",
+    "nextjs",
+    "typescript",
+    "tailwindcss",
+    "framer-motion",
+    "pwa"
+  ],
+  "author": "Triple Lions Expeditions",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GraceMchomvu/safari-adventures-website.git"
+  },
+  "homepage": "https://triplelions.com"
+}

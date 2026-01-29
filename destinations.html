@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Tanzania Destinations - Triple Lions Expeditions</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Image Loading Optimization -->
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Enhanced Hero Section */
+        .destinations-hero {
+            background: linear-gradient(135deg, rgba(201, 184, 130, 0.9) 0%, rgba(107, 142, 35, 0.8) 100%), url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') center/cover;
+            padding: 140px 0 100px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .destinations-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,144C960,149,1056,139,1152,122.7C1248,107,1344,85,1392,74.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+        }
+
+        .destinations-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .destinations-hero p {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 2;
+            line-height: 1.6;
+        }
+
+        /* Category Sections */
+        .category-section {
+            margin-bottom: 6rem;
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        .category-section:nth-child(even) {
+            background: linear-gradient(135deg, rgba(201, 184, 130, 0.03) 0%, rgba(107, 142, 35, 0.03) 100%);
+        }
+
+        .category-title {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: var(--secondary-color);
+            margin-bottom: 4rem;
+            text-align: center;
+            position: relative;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .category-title::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        /* Beautiful Grid System */
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2.5rem;
+            padding: 3rem 0;
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+        /* Elegant Card Design */
+        .destination-card {
+            background: white;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            cursor: pointer;
+            position: relative;
+            border: 2px solid transparent;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            backdrop-filter: blur(20px);
+        }
+
+        .destination-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(201, 184, 130, 0.03) 0%, rgba(107, 142, 35, 0.03) 100%);
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            z-index: 1;
+        }
+
+        .destination-card:hover {
+            transform: translateY(-20px) scale(1.02);
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.15);
+            border-color: rgba(201, 184, 130, 0.3);
+        }
+
+        .destination-card:hover::before {
+            opacity: 1;
+        }
+
+        /* Stunning Image Header */
+        .destination-image {
+            position: relative;
+            height: 280px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            padding: 2rem;
+            transition: all 0.6s ease;
+            overflow: hidden;
+        }
+
+        .destination-card:hover .destination-image {
+            transform: scale(1.05);
+        }
+
+        .destination-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.6) 100%);
+            z-index: 1;
+        }
+
+        /* Floating badges */
+        .destination-badges {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            right: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            z-index: 3;
+        }
+
+        .destination-type {
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--secondary-color);
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .duration {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            box-shadow: 0 8px 25px rgba(201, 184, 130, 0.4);
+            backdrop-filter: blur(20px);
+        }
+
+        /* Beautiful title overlay */
+        .destination-overlay {
+            color: white;
+            z-index: 2;
+            position: relative;
+            width: 100%;
+        }
+
+        .destination-overlay h3 {
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            margin-bottom: 0.8rem;
+            text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.8);
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        .destination-overlay p {
+            font-size: clamp(1rem, 2vw, 1.1rem);
+            opacity: 0.95;
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        /* Elegant content section */
+        .destination-info {
+            padding: 2.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 2;
+        }
+
+        .destination-description {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            flex: 1;
+        }
+
+        .destination-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-tag {
+            background: linear-gradient(135deg, rgba(201, 184, 130, 0.08) 0%, rgba(107, 142, 35, 0.08) 100%);
+            color: var(--primary-color);
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(201, 184, 130, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-tag::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(201, 184, 130, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .feature-tag:hover::before {
+            left: 100%;
+        }
+
+        .feature-tag:hover {
+            background: linear-gradient(135deg, rgba(201, 184, 130, 0.15) 0%, rgba(107, 142, 35, 0.15) 100%);
+            transform: translateY(-2px);
+            border-color: var(--primary-color);
+            box-shadow: 0 8px 20px rgba(201, 184, 130, 0.2);
+        }
+
+        /* Gorgeous button */
+        .destination-btn {
+            display: inline-block;
+            padding: 1.2rem 2rem;
+            background: linear-gradient(135deg, #c9b882 0%, #6b8e23 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: all 0.4s ease;
+            text-align: center;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 12px 35px rgba(201, 184, 130, 0.4);
+            font-size: 1rem;
+            margin-top: auto;
+            letter-spacing: 0.5px;
+        }
+
+        .destination-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .destination-btn:hover::before {
+            left: 100%;
+        }
+
+        .destination-btn:hover {
+            background: linear-gradient(135deg, #6b8e23 0%, #3d5a3d 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 50px rgba(107, 142, 35, 0.5);
+        }
+
+        /* Featured Card Special Styling */
+        .featured-card {
+            grid-column: span 2;
+            background: linear-gradient(135deg, rgba(201, 184, 130, 0.03) 0%, rgba(107, 142, 35, 0.03) 100%);
+            border: 2px solid var(--primary-color);
+        }
+
+        .featured-card .destination-image {
+            height: 280px;
+        }
+
+        .featured-card .destination-overlay h3 {
+            font-size: clamp(1.6rem, 3vw, 2rem);
+        }
+
+        .featured-card .destination-info {
+            padding: 2.2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .featured-card {
+                grid-column: span 1;
+            }
+
+            .destinations-grid {
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: 1.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .destinations-hero {
+                padding: 120px 0 80px;
+            }
+
+            .destinations-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 1rem 0;
+            }
+
+            .category-section {
+                margin-bottom: 4rem;
+                padding: 3rem 0;
+            }
+
+            .destination-card {
+                margin: 0 0.5rem;
+            }
+
+            .destination-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .destination-info {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .destinations-hero {
+                padding: 100px 0 60px;
+            }
+
+            .destinations-grid {
+                gap: 1.2rem;
+                margin: 0 0.5rem;
+            }
+
+            .destination-card {
+                margin: 0;
+            }
+
+            .destination-info {
+                padding: 1.2rem;
+            }
+
+            .category-title {
+                margin-bottom: 2.5rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .destinations-grid {
+                grid-template-columns: 1fr;
+                margin: 0 0.2rem;
+            }
+
+            .destination-features {
+                gap: 0.3rem;
+            }
+
+            .feature-tag {
+                font-size: 0.7rem;
+                padding: 0.2rem 0.5rem;
+            }
+        }
+
+        /* Touch-friendly interactions */
+        @media (hover: none) and (pointer: coarse) {
+            .destination-card:hover {
+                transform: none;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            }
+
+            .destination-btn:hover {
+                transform: none;
+            }
+        }
+
+        /* Loading animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .destination-card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .destination-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .destination-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .destination-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .destination-card:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .destination-card:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .destination-card:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+
+        /* Climbing & Trekking Styles */
+        .trekking-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .trekking-card {
+            background: white;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            border: 1px solid rgba(201, 184, 130, 0.1);
+        }
+
+        .trekking-card.featured {
+            grid-column: 1;
+            grid-row: 1 / 3;
+        }
+
+        .trekking-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .trekking-image {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .trekking-card.featured .trekking-image {
+            height: 300px;
+        }
+
+        .trekking-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .trekking-card:hover .trekking-image img {
+            transform: scale(1.1);
+        }
+
+        .trekking-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .trekking-content {
+            padding: 2rem;
+        }
+
+        .trekking-content h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .trekking-description {
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .trekking-routes {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .route-item {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+
+        .route-item:hover {
+            background: #f1f5f9;
+            transform: translateX(5px);
+        }
+
+        .route-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .route-item p {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .route-btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        .route-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(201, 184, 130, 0.4);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 0;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .close {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            color: #aaa;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+            transition: color 0.3s ease;
+        }
+
+        .close:hover {
+            color: var(--primary-color);
+        }
+
+        /* Responsive Design for Trekking */
+        @media (max-width: 768px) {
+            .trekking-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+
+            .trekking-card.featured {
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            .trekking-routes {
+                gap: 0.8rem;
+            }
+
+            .route-item {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="TES1.png" alt="Triple Lions Expeditions" class="logo-img">
+                    <div class="logo-text">
+                        <h2>Triple Lions Expeditions</h2>
+                        <span>Tanzania Safari Specialists</span>
+                    </div>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="destinations.html" class="active">Destinations</a></li>
+                    <li><a href="#climbing-trekking">Climbing & Trekking</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#testimonials">Testimonials</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Destinations Hero -->
+    <section class="destinations-hero">
+        <div class="container">
+            <h1>Explore Tanzania's Spectacular Destinations</h1>
+            <p>Discover the most incredible safari destinations, national parks, and natural wonders that make Tanzania
+                Africa's premier wildlife destination</p>
+        </div>
+    </section>
+
+    <!-- Northern Circuit -->
+    <section class="destinations">
+        <div class="container">
+            <div class="category-section">
+                <h2 class="category-title">Northern Safari Circuit</h2>
+                <div class="destinations-grid">
+                    <div class="destination-card featured-card" onclick="window.location.href='serengeti.html'">
+                        <div class="destination-image"
+                            style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 100%), url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') center/cover;">
+                            <div class="destination-badges">
+                                <span class="destination-type">National Park</span>
+                                <span class="duration">3-7 Days</span>
+                            </div>
+                            <div class="destination-overlay">
+                                <h3>Serengeti National Park</h3>
+                                <p>World's most famous wildlife sanctuary & UNESCO World Heritage Site</p>
+                            </div>
+                        </div>
+                        <div class="destination-info">
+                            <div class="destination-description">
+                                Home to the Great Wildebeest Migration and Africa's Big Five. Experience the world's
+                                largest mammal migration with over 1.5 million wildebeest, zebras, and gazelles crossing
+                                the vast plains.
+                            </div>
+                            <div class="destination-features">
+                                <span class="feature-tag">Big Five</span>
+                                <span class="feature-tag">Great Migration</span>
+                                <span class="feature-tag">UNESCO Site</span>
+                                <span class="feature-tag">Hot Air Balloon</span>
+                                <span class="feature-tag">14,763 km²</span>
+                                <span class="feature-tag">500+ Bird Species</span>
+                            </div>
+                            <a href="serengeti.html" class="destination-btn">Plan Your Safari</a>
+                        </div>
+                    </div>
+
+                    <div class="destination-card" onclick="window.location.href='index.html#contact'">
+                        <div class="destination-image"
+                            style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 100%), url('https://images.unsplash.com/photo-1551524164-6cf3d3f2c7e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') center/cover;">
+                            <div class="destination-badges">
+                                <span class="destination-type">Mountain Climbing</span>
+                                <span class="duration">5-9 Days</span>
+                            </div>
+                            <div class="destination-overlay">
+                                <h3>Mount Kilimanjaro</h3>
+                                <p>Africa's highest peak at 5,895m above sea level</p>
+                            </div>
+                        </div>
+                        <div class="destination-info">
+                            <div class="destination-description">
+                                Conquer Africa's highest mountain and one of the Seven Summits. Experience diverse
+                                ecosystems from rainforest to arctic summit with breathtaking views.
+                            </div>
+                            <div class="destination-features">
+                                <span class="feature-tag">Seven Summits</span>
+                                <span class="feature-tag">5,895m Peak</span>
+                                <span class="feature-tag">Multiple Routes</span>
+                                <span class="feature-tag">Guided Climbs</span>
+                                <span class="feature-tag">5 Climatic Zones</span>
+                                <span class="feature-tag">UNESCO Site</span>
+                            </div>
+                            <a href="index.html#contact" class="destination-btn">Start Your Climb</a>
+                        </div>
+                    </div>
+
+                    <div class="destination-card" onclick="window.location.href='ngorongoro.html'">
+                        <div class="destination-image"
+                            style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 100%), url('https://images.unsplash.com/photo-1589553448964-7c5b8a4d1b4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') center/cover;">
+                            <div class="destination-overlay">
+                                <h3>Ngorongoro Crater</h3>
+                                <p>World's largest intact volcanic caldera</p>
+                            </div>
+                        </div>
+                        <div class="destination-info">
+                            <div class="destination-meta">
+                                <span class="duration">2-3 Days</span>
+                                <span class="destination-type">Conservation Area</span>
+                            </div>
+                            <div class="destination-description">
+                                Descend into this natural amphitheater to witness the densest population of wildlife in
+                                Africa, including the Big Five in their natural habitat.
+                            </div>
+                            <div class="destination-features">
+                                <span class="feature-tag">Big Five</span>
+                                <span class="feature-tag">Volcanic Caldera</span>
+                                <span class="feature-tag">UNESCO Site</span>
+                                <span class="feature-tag">High Density Wildlife</span>
+                            </div>
+                            <a href="ngorongoro.html" class="destination-btn">Explore the Crater</a>
+                        </div>
+                    </div>
+
+                    <div class="destination-card" onclick="window.location.href='index.html#contact'">
+                        <div class="destination-image"
+                            style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 100%), url('https://images.unsplash.com/photo-1544966503-7cc4c8703f1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') center/cover;">
+                            <div class="destination-overlay">
+                                <h3>Tarangire National Park</h3>
+                                <p>Elephant paradise with ancient baobabs</p>
+                            </div>
+                        </div>
+                        <div class="destination-info">
+                            <div class="destination-meta">
+                                <span class="duration">2-4 Days</span>
+                                <span class="destination-type">National Park</span>
+                            </div>
+                            <div class="destination-description">
+                                Famous for its large elephant herds and majestic baobab trees. Experience incredible
+                                wildlife concentrations during the dry season.
+                            </div>
+                            <a href="index.html#contact" class="destination-btn">Visit Tarangire</a>
+                        </div>
+                    </div>
+
+                    <div class="destination-card" onclick="window.location.href='index.html#contact'">
+                        <div class="destination-image"
+                            style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 100%), url('https://images.unsplash.com/photo-1568454537842-d933259bb258?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') center/cover;">
+                            <div class="destination-overlay">
+                                <h3>Lake Manyara National Park</h3>
+                                <p>Tree-climbing lions and flamingos</p>
+                            </div>
+                        </div>
+                        <div class="destination-info">
+                            <div class="destination-meta">
+                                <span class="duration">1-2 Days</span>
+                                <span class="destination-type">National Park</span>
+                            </div>
+                            <div class="destination-description">
+                                Witness the rare tree-climbing lions and thousands of pink flamingos on the alkaline
+                                lake. A compact park with diverse ecosystems.
+                            </div>
+                            <a href="index.html#contact" class="destination-btn">Discover Manyara</a>
+                        </div>
+                    </div>
+
+                    <div class="destination-card" onclick="window.location.href='index.html#contact'">
+                        <div class="destination-image"
+                            style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 100%), url('https://images.unsplash.com/photo-1549366021-9f761d450615?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') center/cover;">
+                            <div class="destination-overlay">
+                                <h3>Arusha National Park</h3>
+                                <p>Mount Meru and diverse wildlife</p>
+                            </div>
+                        </div>
+                        <div class="destination-info">
+                            <div class="destination-meta">
+                                <span class="duration">1-3 Days</span>
+                                <span class="destination-type">National Park</span>
+                            </div>
+                            <div class="destination-description">
+                                Climb Mount Meru or enjoy game drives with views of Kilimanjaro. Home to giraffes,
+                                zebras, and diverse birdlife.
+                            </div>
+                            <a href="index.html#contact" class="destination-btn">Explore Arusha</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coastal & Islands -->
+            <div class="category-section">
+                <h2 class="category-title">Coastal & Islands</h2>
+                <div class="destinations-grid">
+                    <div class="destination-card" onclick="window.location.href='index.html#contact'">
+                        <div class="destination-header"
+                            style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 100%), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') center/cover;">
+                            <div class="destination-badges">
+                                <span class="destination-type">Beach & Culture</span>
+                                <span class="duration">3-7 Days</span>
+                            </div>
+                            <div class="destination-title">
+                                <h3>Zanzibar Island</h3>
+                                <p>Spice Island paradise & UNESCO World Heritage</p>
+                            </div>
+                        </div>
+                        <div class="destination-content">
+                            <div class="destination-description">
+                                Relax on pristine white sand beaches, explore Stone Town's rich history, and experience
+                                the famous spice tours in this tropical paradise.
+                            </div>
+                            <div class="destination-highlights">
+                                <div class="highlights-title">Key Highlights</div>
+                                <div class="destination-features">
+                                    <span class="feature-tag">Pristine Beaches</span>
+                                    <span class="feature-tag">Stone Town</span>
+                                    <span class="feature-tag">Spice Tours</span>
+                                    <span class="feature-tag">UNESCO Site</span>
+                                    <span class="feature-tag">Diving & Snorkeling</span>
+                                    <span class="feature-tag">Rich Culture</span>
+                                </div>
+                            </div>
+                            <a href="index.html#contact" class="destination-btn">Book Beach Holiday</a>
+                        </div>
+                    </div>
+
+                    <div class="destination-card" onclick="window.location.href='index.html#contact'">
+                        <div class="destination-image"
+                            style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 100%), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') center/cover;">
+                            <div class="destination-overlay">
+                                <h3>Pemba Island</h3>
+                                <p>Green Island of spices</p>
+                            </div>
+                        </div>
+                        <div class="destination-info">
+                            <div class="destination-meta">
+                                <span class="duration">2-5 Days</span>
+                                <span class="destination-type">Island Paradise</span>
+                            </div>
+                            <div class="destination-description">
+                                Less touristy sister island to Zanzibar, offering pristine beaches, excellent diving,
+                                and authentic cultural experiences.
+                            </div>
+                            <a href="index.html#contact" class="destination-btn">Discover Pemba</a>
+                        </div>
+                    </div>
+
+                    <div class="destination-card" onclick="window.location.href='index.html#contact'">
+                        <div class="destination-image"
+                            style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 100%), url('https://images.unsplash.com/photo-1583878431254-eb4d25f6e609?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') center/cover;">
+                            <div class="destination-overlay">
+                                <h3>Mafia Island</h3>
+                                <p>Marine paradise and whale sharks</p>
+                            </div>
+                        </div>
+                        <div class="destination-info">
+                            <div class="destination-meta">
+                                <span class="duration">3-5 Days</span>
+                                <span class="destination-type">Marine Park</span>
+                            </div>
+                            <div class="destination-description">
+                                Swim with whale sharks, enjoy world-class diving, and relax on untouched beaches in this
+                                marine paradise.
+                            </div>
+                            <a href="index.html#contact" class="destination-btn">Explore Mafia</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Southern Circuit -->
+            <div class="category-section">
+                <h2 class="category-title">Southern Safari Circuit</h2>
+                <div class="destinations-grid">
+                    <div class="destination-card" onclick="window.location.href='index.html#contact'">
+                        <div class="destination-image"
+                            style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 100%), url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') center/cover;">
+                            <div class="destination-overlay">
+                                <h3>Ruaha National Park</h3>
+                                <p>Tanzania's largest national park</p>
+                            </div>
+                        </div>
+                        <div class="destination-info">
+                            <div class="destination-meta">
+                                <span class="duration">3-5 Days</span>
+                                <span class="destination-type">National Park</span>
+                            </div>
+                            <div class="destination-description">
+                                Remote wilderness with excellent predator sightings, large elephant herds, and diverse
+                                birdlife in unspoiled landscapes.
+                            </div>
+                            <a href="index.html#contact" class="destination-btn">Visit Ruaha</a>
+                        </div>
+                    </div>
+
+                    <div class="destination-card" onclick="window.location.href='index.html#contact'">
+                        <div class="destination-image"
+                            style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 100%), url('https://images.unsplash.com/photo-1535338847010-9c0b90f12ac5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') center/cover;">
+                            <div class="destination-overlay">
+                                <h3>Mikumi National Park</h3>
+                                <p>Easy access from Dar es Salaam</p>
+                            </div>
+                        </div>
+                        <div class="destination-info">
+                            <div class="destination-meta">
+                                <span class="duration">2-3 Days</span>
+                                <span class="destination-type">National Park</span>
+                            </div>
+                            <div class="destination-description">
+                                Convenient safari destination close to Dar es Salaam, offering excellent wildlife
+                                viewing with the Big Five present.
+                            </div>
+                            <a href="index.html#contact" class="destination-btn">Explore Mikumi</a>
+                        </div>
+                    </div>
+
+                    <div class="destination-card" onclick="window.location.href='index.html#contact'">
+                        <div class="destination-image"
+                            style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 100%), url('https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') center/cover;">
+                            <div class="destination-overlay">
+                                <h3>Selous Game Reserve</h3>
+                                <p>Africa's largest game reserve</p>
+                            </div>
+                        </div>
+                        <div class="destination-info">
+                            <div class="destination-meta">
+                                <span class="duration">3-5 Days</span>
+                                <span class="destination-type">Game Reserve</span>
+                            </div>
+                            <div class="destination-description">
+                                Boat safaris on the Rufiji River, walking safaris, and exceptional wildlife viewing in
+                                this vast wilderness area.
+                            </div>
+                            <a href="index.html#contact" class="destination-btn">Discover Selous</a>
+                        </div>
+                    </div>
+
+                    <div class="destination-card" onclick="window.location.href='index.html#contact'">
+                        <div class="destination-image"
+                            style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 100%), url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') center/cover;">
+                            <div class="destination-overlay">
+                                <h3>Udzungwa Mountains</h3>
+                                <p>Primate paradise and waterfalls</p>
+                            </div>
+                        </div>
+                        <div class="destination-info">
+                            <div class="destination-meta">
+                                <span class="duration">2-4 Days</span>
+                                <span class="destination-type">National Park</span>
+                            </div>
+                            <div class="destination-description">
+                                Trek through pristine forests to see rare primates, endemic birds, and stunning
+                                waterfalls in this biodiversity hotspot.
+                            </div>
+                            <a href="index.html#contact" class="destination-btn">Hike Udzungwa</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Western Tanzania -->
+            <div class="category-section">
+                <h2 class="category-title">Western Tanzania</h2>
+                <div class="destinations-grid">
+                    <div class="destination-card" onclick="window.location.href='index.html#contact'">
+                        <div class="destination-image"
+                            style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 100%), url('https://images.unsplash.com/photo-1535083783855-76ae62b2914e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') center/cover;">
+                            <div class="destination-overlay">
+                                <h3>Mahale Mountains</h3>
+                                <p>Chimpanzee trekking paradise</p>
+                            </div>
+                        </div>
+                        <div class="destination-info">
+                            <div class="destination-meta">
+                                <span class="duration">3-5 Days</span>
+                                <span class="destination-type">National Park</span>
+                            </div>
+                            <div class="destination-description">
+                                Trek through pristine forests to observe chimpanzees in their natural habitat, with Lake
+                                Tanganyika as your backdrop.
+                            </div>
+                            <a href="index.html#contact" class="destination-btn">Trek Chimpanzees</a>
+                        </div>
+                    </div>
+
+                    <div class="destination-card" onclick="window.location.href='index.html#contact'">
+                        <div class="destination-image"
+                            style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 100%), url('https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') center/cover;">
+                            <div class="destination-overlay">
+                                <h3>Gombe Stream</h3>
+                                <p>Jane Goodall's chimpanzee sanctuary</p>
+                            </div>
+                        </div>
+                        <div class="destination-info">
+                            <div class="destination-meta">
+                                <span class="duration">2-3 Days</span>
+                                <span class="destination-type">National Park</span>
+                            </div>
+                            <div class="destination-description">
+                                Visit the site of Jane Goodall's pioneering chimpanzee research. Experience intimate
+                                encounters with habituated chimpanzee families.
+                            </div>
+                            <a href="index.html#contact" class="destination-btn">Meet the Chimps</a>
+                        </div>
+                    </div>
+
+                    <div class="destination-card" onclick="window.location.href='index.html#contact'">
+                        <div class="destination-image"
+                            style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 100%), url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') center/cover;">
+                            <div class="destination-overlay">
+                                <h3>Katavi National Park</h3>
+                                <p>Remote wilderness adventure</p>
+                            </div>
+                        </div>
+                        <div class="destination-info">
+                            <div class="destination-meta">
+                                <span class="duration">3-5 Days</span>
+                                <span class="destination-type">National Park</span>
+                            </div>
+                            <div class="destination-description">
+                                Experience true wilderness with massive buffalo herds, hippos, and crocodiles in one of
+                                Africa's most remote parks.
+                            </div>
+                            <a href="index.html#contact" class="destination-btn">Wild Adventure</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Climbing & Trekking Section -->
+    <section class="category-section" id="climbing-trekking">
+        <div class="container">
+            <h2 class="category-title">Climbing & Trekking</h2>
+            <div class="category-intro">
+                <p>Ready to trade your flip-flops for hiking boots? Whether you're dreaming of standing on the Roof of
+                    Africa at sunrise or exploring misty mountain trails far from the crowds, Tanzania's peaks are
+                    calling! From the mighty <strong>Mount Kilimanjaro</strong> to the wild beauty of <strong>Mount
+                        Meru</strong>, the dramatic slopes of <strong>Ol Doinyo Lengai</strong>, and the lush green
+                    escapes of the <strong>Usambara Mountains</strong>—we've got treks for thrill-seekers,
+                    nature-lovers, and everyone in between.</p>
+            </div>
+
+            <div class="trekking-grid">
+                <!-- Kilimanjaro Routes -->
+                <div class="trekking-card featured">
+                    <div class="trekking-image">
+                        <img src="https://images.unsplash.com/photo-1551524164-6cf3d3f2c7e5?w=600&q=85"
+                            alt="Mount Kilimanjaro">
+                        <div class="trekking-badge">Most Popular</div>
+                    </div>
+                    <div class="trekking-content">
+                        <h3>Mount Kilimanjaro</h3>
+                        <p class="trekking-description">Conquer Africa's highest peak - 5,895m above sea level. Multiple
+                            routes available for different experience levels.</p>
+                        <div class="trekking-routes">
+                            <div class="route-item">
+                                <h4>5-Day Marangu Route</h4>
+                                <p>Classic "Coca-Cola" route with comfortable hut accommodations</p>
+                                <button class="route-btn" onclick="showRouteDetails('marangu-5')">View
+                                    Itinerary</button>
+                            </div>
+                            <div class="route-item">
+                                <h4>6-Day Machame Route</h4>
+                                <p>Scenic route through stunning landscapes including Barranco Wall</p>
+                                <button class="route-btn" onclick="showRouteDetails('machame-6')">View
+                                    Itinerary</button>
+                            </div>
+                            <div class="route-item">
+                                <h4>8-Day Lemosho Route</h4>
+                                <p>Most scenic and best-acclimatized trek through lush rainforests</p>
+                                <button class="route-btn" onclick="showRouteDetails('lemosho-8')">View
+                                    Itinerary</button>
+                            </div>
+                            <div class="route-item">
+                                <h4>6-Day Rongai Route</h4>
+                                <p>Quiet trails with diverse landscapes and high summit success</p>
+                                <button class="route-btn" onclick="showRouteDetails('rongai-6')">View Itinerary</button>
+                            </div>
+                            <div class="route-item">
+                                <h4>6-Day Umbwe Route</h4>
+                                <p>Steepest trail designed for experienced climbers</p>
+                                <button class="route-btn" onclick="showRouteDetails('umbwe-6')">View Itinerary</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mount Meru -->
+                <div class="trekking-card">
+                    <div class="trekking-image">
+                        <img src="https://images.unsplash.com/photo-1589553448964-7c5b8a4d1b4f?w=600&q=85"
+                            alt="Mount Meru">
+                    </div>
+                    <div class="trekking-content">
+                        <h3>Mount Meru</h3>
+                        <p class="trekking-description">Perfect warm-up for Kilimanjaro or standalone adventure. 4,566m
+                            peak with stunning crater views.</p>
+                        <div class="route-item">
+                            <h4>4-Day Mount Meru Trek</h4>
+                            <p>Scenic ascent through diverse ecosystems to the summit</p>
+                            <button class="route-btn" onclick="showRouteDetails('meru-4')">View Itinerary</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ol Doinyo Lengai -->
+                <div class="trekking-card">
+                    <div class="trekking-image">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&q=85"
+                            alt="Ol Doinyo Lengai">
+                    </div>
+                    <div class="trekking-content">
+                        <h3>Ol Doinyo Lengai</h3>
+                        <p class="trekking-description">"Mountain of God" - Active volcano with unique natrocarbonatite
+                            lava flows.</p>
+                        <div class="route-item">
+                            <h4>2-Day Ol Doinyo Lengai</h4>
+                            <p>Challenging night climb to witness sunrise from the crater</p>
+                            <button class="route-btn" onclick="showRouteDetails('lengai-2')">View Itinerary</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Usambara Mountains -->
+                <div class="trekking-card">
+                    <div class="trekking-image">
+                        <img src="https://images.unsplash.com/photo-1544966503-7cc4c8703f1c?w=600&q=85"
+                            alt="Usambara Mountains">
+                    </div>
+                    <div class="trekking-content">
+                        <h3>Usambara Mountains</h3>
+                        <p class="trekking-description">Lush green mountain ranges perfect for hiking and cultural
+                            experiences.</p>
+                        <div class="route-item">
+                            <h4>3-Day Usambara Trek</h4>
+                            <p>Explore misty trails and traditional villages</p>
+                            <button class="route-btn" onclick="showRouteDetails('usambara-3')">View Itinerary</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Route Details Modal -->
+    <div id="routeModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeRouteModal()">&times;</span>
+            <div id="routeDetails"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="TES1.png" alt="Triple Lions Expeditions"
+                        style="width: 200px; max-width: 100%; margin-bottom: 1rem;">
+                    <p>Your trusted partner for unforgettable safari and travel experiences in Tanzania and East Africa
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#testimonials">Testimonials</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Triple Lions Expeditions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        // Route Details Data
+        const routeDetails = {
+            'marangu-5': {
+                title: '5-Day Marangu Route – Kilimanjaro Trek',
+                description: 'Trek Mount Kilimanjaro in 5 days via the classic Marangu Route with Triple Lions Expeditions. Comfortable huts, scenic landscapes, and expert guides take you to the Roof of Africa.',
+                itinerary: [
+                    'Day 1: Arrival in Arusha - Transfer to hotel, briefing, and equipment check',
+                    'Day 2: Drive to Marangu Gate - Start trek to Mandara Hut (2,700m)',
+                    'Day 3: Trek to Horombo Hut (3,720m) - Acclimatization walk',
+                    'Day 4: Trek to Kibo Hut (4,700m) - Prepare for summit attempt',
+                    'Day 5: Summit Day - Climb to Uhuru Peak (5,895m) and descend to Horombo Hut',
+                    'Day 6: Descend to Marangu Gate - Transfer back to Arusha'
+                ],
+                highlights: [
+                    'Comfortable hut accommodations',
+                    'Scenic rainforest and moorland',
+                    'High success rate',
+                    'Experienced guides and porters',
+                    'All meals included'
+                ],
+                difficulty: 'Moderate',
+                duration: '6 days / 5 nights',
+                groupSize: '2-12 people',
+                price: 'From $1,450 per person'
+            },
+            'machame-6': {
+                title: '6-Day Machame Route – Kilimanjaro Trek',
+                description: 'Climb Mount Kilimanjaro via the 6-day Machame Route—Triple Lions Expeditions offers fully guided treks through stunning landscapes, including the Barranco Wall and Uhuru Peak.',
+                itinerary: [
+                    'Day 1: Arrival in Arusha - Hotel check-in and briefing',
+                    'Day 2: Drive to Machame Gate - Trek to Machame Camp (3,000m)',
+                    'Day 3: Trek to Shira Camp (3,840m) - Cross Shira Plateau',
+                    'Day 4: Trek to Barranco Camp (3,960m) via Lava Tower',
+                    'Day 5: Trek to Barafu Camp (4,640m) - Summit preparation',
+                    'Day 6: Summit Day - Climb to Uhuru Peak and descend to Mweka Camp',
+                    'Day 7: Descend to Mweka Gate - Transfer to Arusha'
+                ],
+                highlights: [
+                    'Scenic route with diverse landscapes',
+                    'Barranco Wall challenge',
+                    'Excellent acclimatization',
+                    'Camping experience',
+                    'Small group sizes'
+                ],
+                difficulty: 'Challenging',
+                duration: '7 days / 6 nights',
+                groupSize: '2-10 people',
+                price: 'From $1,650 per person'
+            },
+            'lemosho-8': {
+                title: '8-Day Lemosho Route—Kilimanjaro Trek',
+                description: 'Climb Kilimanjaro via the 8-day Lemosho Route, the most scenic and best-acclimatized trek. Explore lush rainforests, wild plateaus, and summit Africa\'s highest peak.',
+                itinerary: [
+                    'Day 1: Arrival in Arusha - Hotel check-in and equipment check',
+                    'Day 2: Drive to Lemosho Gate - Trek to Mti Mkubwa Camp (2,650m)',
+                    'Day 3: Trek to Shira Camp 1 (3,500m) - Cross Shira Plateau',
+                    'Day 4: Trek to Shira Camp 2 (3,900m) - Acclimatization',
+                    'Day 5: Trek to Barranco Camp (3,960m) via Lava Tower',
+                    'Day 6: Trek to Karanga Camp (4,035m) - Barranco Wall',
+                    'Day 7: Trek to Barafu Camp (4,640m) - Summit preparation',
+                    'Day 8: Summit Day - Climb to Uhuru Peak and descend to Mweka Camp',
+                    'Day 9: Descend to Mweka Gate - Transfer to Arusha'
+                ],
+                highlights: [
+                    'Most scenic route',
+                    'Best acclimatization profile',
+                    'Lush rainforest start',
+                    'Wild plateau crossing',
+                    'High success rate'
+                ],
+                difficulty: 'Challenging',
+                duration: '9 days / 8 nights',
+                groupSize: '2-8 people',
+                price: 'From $1,950 per person'
+            },
+            'rongai-6': {
+                title: '6-Day Rongai Route – Kilimanjaro Trek',
+                description: 'Trek Mount Kilimanjaro via the scenic 6-day Rongai Route. Enjoy quiet trails, diverse landscapes, and high summit success on this off-the-beaten-path adventure.',
+                itinerary: [
+                    'Day 1: Arrival in Arusha - Hotel check-in and briefing',
+                    'Day 2: Drive to Rongai Gate - Trek to Simba Camp (2,650m)',
+                    'Day 3: Trek to Kikelewa Camp (3,600m) - Moorland zone',
+                    'Day 4: Trek to Mawenzi Tarn (4,330m) - Acclimatization',
+                    'Day 5: Trek to Kibo Camp (4,700m) - Summit preparation',
+                    'Day 6: Summit Day - Climb to Uhuru Peak and descend to Horombo Hut',
+                    'Day 7: Descend to Marangu Gate - Transfer to Arusha'
+                ],
+                highlights: [
+                    'Quiet, less crowded route',
+                    'Northern approach',
+                    'Diverse landscapes',
+                    'High summit success rate',
+                    'Wildlife viewing opportunities'
+                ],
+                difficulty: 'Moderate to Challenging',
+                duration: '7 days / 6 nights',
+                groupSize: '2-12 people',
+                price: 'From $1,550 per person'
+            },
+            'umbwe-6': {
+                title: '6-Day Umbwe Route – Kilimanjaro Trek',
+                description: 'Take on Kilimanjaro\'s steepest trail with this 6-day Umbwe Route trek. Designed for experienced climbers, this route offers dramatic views and a thrilling challenge.',
+                itinerary: [
+                    'Day 1: Arrival in Arusha - Hotel check-in and equipment check',
+                    'Day 2: Drive to Umbwe Gate - Trek to Umbwe Cave Camp (2,850m)',
+                    'Day 3: Trek to Barranco Camp (3,960m) - Steep ascent',
+                    'Day 4: Trek to Karanga Camp (4,035m) - Barranco Wall',
+                    'Day 5: Trek to Barafu Camp (4,640m) - Summit preparation',
+                    'Day 6: Summit Day - Climb to Uhuru Peak and descend to Mweka Camp',
+                    'Day 7: Descend to Mweka Gate - Transfer to Arusha'
+                ],
+                highlights: [
+                    'Steepest and most challenging route',
+                    'Dramatic views',
+                    'For experienced climbers only',
+                    'Shortest route to summit',
+                    'Adrenaline-pumping adventure'
+                ],
+                difficulty: 'Very Challenging',
+                duration: '7 days / 6 nights',
+                groupSize: '2-6 people',
+                price: 'From $1,750 per person'
+            },
+            'meru-4': {
+                title: '4-Day Mount Meru Trek',
+                description: 'Perfect warm-up for Kilimanjaro or standalone adventure. 4,566m peak with stunning crater views and diverse ecosystems.',
+                itinerary: [
+                    'Day 1: Arrival in Arusha - Transfer to Arusha National Park',
+                    'Day 2: Trek to Miriakamba Hut (2,500m) - Through montane forest',
+                    'Day 3: Trek to Saddle Hut (3,550m) - Acclimatization walk',
+                    'Day 4: Summit Day - Climb to Meru Peak and descend to Momella Gate'
+                ],
+                highlights: [
+                    'Perfect Kilimanjaro warm-up',
+                    'Stunning crater views',
+                    'Diverse ecosystems',
+                    'Wildlife viewing',
+                    'Less crowded than Kilimanjaro'
+                ],
+                difficulty: 'Moderate',
+                duration: '4 days / 3 nights',
+                groupSize: '2-8 people',
+                price: 'From $850 per person'
+            },
+            'lengai-2': {
+                title: '2-Day Ol Doinyo Lengai Trek',
+                description: '"Mountain of God" - Active volcano with unique natrocarbonatite lava flows. Challenging night climb to witness sunrise from the crater.',
+                itinerary: [
+                    'Day 1: Drive to Lake Natron - Trek to base camp (2,800m)',
+                    'Day 2: Night climb to summit (2,962m) - Sunrise views and return'
+                ],
+                highlights: [
+                    'Active volcano',
+                    'Unique lava flows',
+                    'Sunrise from crater',
+                    'Cultural significance',
+                    'Challenging night climb'
+                ],
+                difficulty: 'Very Challenging',
+                duration: '2 days / 1 night',
+                groupSize: '2-6 people',
+                price: 'From $650 per person'
+            },
+            'usambara-3': {
+                title: '3-Day Usambara Mountains Trek',
+                description: 'Lush green mountain ranges perfect for hiking and cultural experiences. Explore misty trails and traditional villages.',
+                itinerary: [
+                    'Day 1: Drive to Lushoto - Trek to Magamba village',
+                    'Day 2: Trek through Irente viewpoint - Cultural experiences',
+                    'Day 3: Trek to Mtae village - Return to Lushoto'
+                ],
+                highlights: [
+                    'Lush mountain landscapes',
+                    'Cultural village visits',
+                    'Traditional farming',
+                    'Bird watching',
+                    'Cool mountain climate'
+                ],
+                difficulty: 'Easy to Moderate',
+                duration: '3 days / 2 nights',
+                groupSize: '2-10 people',
+                price: 'From $450 per person'
+            }
+        };
+
+        function showRouteDetails(routeId) {
+            const route = routeDetails[routeId];
+            if (!route) return;
+
+            const modal = document.getElementById('routeModal');
+            const content = document.getElementById('routeDetails');
+
+            content.innerHTML = `
+                <div style="padding: 2rem;">
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <h2 style="color: var(--primary-color); margin-bottom: 1rem;">${route.title}</h2>
+                        <p style="color: var(--text-color); font-size: 1.1rem; line-height: 1.6;">${route.description}</p>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+                        <div>
+                            <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Route Information</h3>
+                            <div style="background: #f8fafc; padding: 1.5rem; border-radius: 15px;">
+                                <p><strong>Duration:</strong> ${route.duration}</p>
+                                <p><strong>Difficulty:</strong> ${route.difficulty}</p>
+                                <p><strong>Group Size:</strong> ${route.groupSize}</p>
+                                <p><strong>Price:</strong> ${route.price}</p>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Highlights</h3>
+                            <ul style="background: #f8fafc; padding: 1.5rem; border-radius: 15px; list-style: none;">
+                                ${route.highlights.map(highlight => `<li style="margin-bottom: 0.5rem;">✓ ${highlight}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Detailed Itinerary</h3>
+                        <div style="background: #f8fafc; padding: 1.5rem; border-radius: 15px;">
+                            ${route.itinerary.map(day => `<p style="margin-bottom: 0.8rem; padding-left: 1rem; border-left: 3px solid var(--secondary-color);">${day}</p>`).join('')}
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <button onclick="window.location.href='index.html#contact'" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; border: none; padding: 1rem 2rem; border-radius: 25px; font-weight: 600; cursor: pointer; margin-right: 1rem;">
+                            Book This Route
+                        </button>
+                        <button onclick="closeRouteModal()" style="background: #f1f5f9; color: var(--text-color); border: 1px solid #e2e8f0; padding: 1rem 2rem; border-radius: 25px; font-weight: 600; cursor: pointer;">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            modal.style.display = 'block';
+        }
+
+        function closeRouteModal() {
+            document.getElementById('routeModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function (event) {
+            const modal = document.getElementById('routeModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>

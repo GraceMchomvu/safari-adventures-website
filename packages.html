@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safari & Trekking Packages - Triple Lions Expeditions</title>
+    <meta name="description"
+        content="Explore our curated safari packages, Kilimanjaro climbs, and cultural tours in Tanzania.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="TES1.png" alt="Triple Lions Expeditions" class="logo-img">
+                    <div class="logo-text">
+                        <h2>Triple Lions Expeditions</h2>
+                        <span>Tanzania Safari Specialists</span>
+                    </div>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="packages.html" class="active">Packages</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="destinations-hero"
+        style="background-image: linear-gradient(135deg, rgba(201, 184, 130, 0.9) 0%, rgba(107, 142, 35, 0.8) 100%), url('https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
+        <div class="container">
+            <h1>Our Safari & Trekking Packages</h1>
+            <p>Expertly crafted itineraries for the ultimate Tanzanian adventure</p>
+        </div>
+    </section>
+
+    <!-- Packages Grid -->
+    <section class="destinations">
+        <div class="container">
+            <div class="category-section">
+                <h2 class="category-title">Featured Itineraries</h2>
+                <div class="destinations-grid">
+                    <!-- Shira Route -->
+                    <div class="destination-card" onclick="window.location.href='shira-route.html'">
+                        <div class="destination-image"
+                            style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 100%), url('https://images.unsplash.com/photo-1551524164-6cf3d3f2c7e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover;">
+                            <div class="destination-badges">
+                                <span class="destination-type">Climbing</span>
+                                <span class="duration">7 Days</span>
+                            </div>
+                            <div class="destination-overlay">
+                                <h3>7 Days Shira Route</h3>
+                                <p>Kilimanjaro Climb from the West</p>
+                            </div>
+                        </div>
+                        <div class="destination-info">
+                            <div class="destination-description">
+                                A scenic and less frequented route approaching Kilimanjaro's peak across the Shira
+                                Plateau. Experience high altitude wilderness.
+                            </div>
+                            <a href="shira-route.html" class="destination-btn">View Itinerary</a>
+                        </div>
+                    </div>
+
+                    <!-- Chimpanzee Trekking -->
+                    <div class="destination-card" onclick="window.location.href='chimpanzee-trekking.html'">
+                        <div class="destination-image"
+                            style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 100%), url('https://images.unsplash.com/photo-1544966503-7cc4c8703f1c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover;">
+                            <div class="destination-badges">
+                                <span class="destination-type">Primate Trekking</span>
+                                <span class="duration">7 Days</span>
+                            </div>
+                            <div class="destination-overlay">
+                                <h3>Gombe & Mahale Trekking</h3>
+                                <p>Chimpanzee Adventure</p>
+                            </div>
+                        </div>
+                        <div class="destination-info">
+                            <div class="destination-description">
+                                Visit Gombe Stream and Mahale Mountains on the shores of Lake Tanganyika to encounter
+                                endangered chimpanzees in their natural habitat.
+                            </div>
+                            <a href="chimpanzee-trekking.html" class="destination-btn">View Itinerary</a>
+                        </div>
+                    </div>
+
+                    <!-- 11 Days Northern Circuit -->
+                    <div class="destination-card" onclick="window.location.href='northern-circuit-zanzibar-11.html'">
+                        <div class="destination-image"
+                            style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 100%), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover;">
+                            <div class="destination-badges">
+                                <span class="destination-type">Safari & Beach</span>
+                                <span class="duration">11 Days</span>
+                            </div>
+                            <div class="destination-overlay">
+                                <h3>Northern Circuit & Zanzibar</h3>
+                                <p>Bush to Beach Experience</p>
+                            </div>
+                        </div>
+                        <div class="destination-info">
+                            <div class="destination-description">
+                                The ultimate 11-day adventure exploring Tarangire, Serengeti, Ngorongoro, and Lake
+                                Manyara, followed by relaxation on Zanzibar's pristine beaches.
+                            </div>
+                            <a href="northern-circuit-zanzibar-11.html" class="destination-btn">View Itinerary</a>
+                        </div>
+                    </div>
+
+                    <!-- 10 Days Northern Circuit -->
+                    <div class="destination-card" onclick="window.location.href='northern-circuit-zanzibar-10.html'">
+                        <div class="destination-image"
+                            style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 100%), url('https://images.unsplash.com/photo-1535940587874-83907eb637f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover;">
+                            <div class="destination-badges">
+                                <span class="destination-type">Safari & Beach</span>
+                                <span class="duration">10 Days</span>
+                            </div>
+                            <div class="destination-overlay">
+                                <h3>10 Days Safari & Zanzibar</h3>
+                                <p>Comprehensive Northern Circuit</p>
+                            </div>
+                        </div>
+                        <div class="destination-info">
+                            <div class="destination-description">
+                                A perfectly balanced 10-day tour covering Arusha, Tarangire, Lake Manyara, Serengeti,
+                                Ngorongoro Crater, and ending with a beach holiday in Zanzibar.
+                            </div>
+                            <a href="northern-circuit-zanzibar-10.html" class="destination-btn">View Itinerary</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="TES1.png" alt="Triple Lions Expeditions"
+                        style="width: 200px; max-width: 100%; margin-bottom: 1rem;">
+                    <p>Your trusted partner for unforgettable safari and travel experiences in Tanzania and East Africa
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="index.html#testimonials">Testimonials</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Triple Lions Expeditions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

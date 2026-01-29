@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ngorongoro Conservation Area: Tanzania’s Natural Wonder</title>
+    <meta name="description"
+        content="Discover the Ngorongoro Crater, the Big Five animals, birdlife, and beautiful wild animals. Explore this Tanzania’s top wildlife destination.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        .destination-detail-hero {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%),
+                url('https://images.unsplash.com/photo-1589553448964-7c5b8a4d1b4f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover;
+            padding: 200px 0 100px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .content-section {
+            padding: 4rem 0;
+            background: #fff;
+        }
+
+        .content-block {
+            margin-bottom: 3rem;
+        }
+
+        .content-block h2 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 1rem;
+        }
+
+        .content-block h3 {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .content-block p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .highlight-box {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid var(--accent-color);
+            margin: 2rem 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .gallery-item {
+            height: 250px;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .btn-cta {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="TES1.png" alt="Triple Lions Expeditions" class="logo-img">
+                    <div class="logo-text">
+                        <h2>Triple Lions Expeditions</h2>
+                        <span>Tanzania Safari Specialists</span>
+                    </div>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="destination-detail-hero">
+        <div class="container">
+            <h1>The Ngorongoro Conservation Area</h1>
+            <p>Tanzania’s Natural Wonder &amp; UNESCO World Heritage Site</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="content-section">
+        <div class="container">
+            <div class="content-block">
+                <h2>Tanzania's Natural Wonder</h2>
+                <p>Tanzania is an enchanting tourist destination endowed with a multitude of attractions. They include
+                    Serengeti National Park, Mount Kilimanjaro, Ngorongoro, and many more. Ngorongoro Conservation Area
+                    is one of such amazing attractions. It deserves to be on the bucket list of every safari-goer.</p>
+                <p>The wildlife and landscapes of this World Heritage Site are untouched. Consider adding it to your
+                    safari program on your next adventure.</p>
+            </div>
+
+            <div class="highlight-box">
+                <h3>How to get to Ngorongoro Conservation Area</h3>
+                <p>Ngorongoro Conservation Area is 120 kilometers away to the west of Arusha. The best way to get to
+                    Ngorongoro Conservation Area is by road. The distance from Arusha to Ngorongoro Conservation Area is
+                    about 3 hours. The main gate is the Loduare gate, which is 45 km from Karatu.</p>
+            </div>
+
+            <div class="content-block">
+                <h2>Attractions in the Ngorongoro Conservation Area</h2>
+
+                <h3>Wildlife</h3>
+                <p>There is a large number of wild animals in the Ngorongoro Conservation Area. The Ngorongoro Crater
+                    boasts about 700 wildebeests, 3000 elands, and 3000 gazelles. It also hosts 4000 zebras, over 90
+                    elephants, and 26 black rhinos. Other animals include striped hyenas, cheetahs, jackals, foxes,
+                    waterbucks, reedbucks, impalas, wild dogs, warthogs, and various species of antelopes.</p>
+                <p>The animals are highly concentrated in the crater floor, thus making wildlife viewing pretty much
+                    easier. The crater is a promising destination to see the Big Five animals due to its smaller size.
+                    On a game drive, you can spot all the Big Five—lion, leopard, elephant, Cape buffalo, and black
+                    rhino.</p>
+
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Lion in Ngorongoro">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1534177616072-ef7dc12044f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Rhinos in the Crater">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Ngorongoro Landscape">
+                    </div>
+                </div>
+
+                <h3>Birds in Ngorongoro</h3>
+                <p>Ngorongoro Conservation Area has plenty of birds, counting up to 500 species. Many are resident
+                    birds, while a few are migratory. Migratory bird species arrive at the Ngorongoro Conservation Area
+                    between November and May.</p>
+                <p>Some commonly encountered birds include ashy starlings, secretary birds, lesser flamingos, and
+                    white-eyed flycatchers. Visitors may also see black kites, African spoonbills, lesser flamingos, and
+                    grey-crowned cranes. Kori bustard, black-winged lapwing, living turaco, and Egyptian vulture are
+                    also common. Hartlaub's turaco, Verreaux eagle, and Hildebrandt’s spurfowl, among others.</p>
+                <p>You may also see ostrich, red and yellow barbet, Jackson's widowbird, Namaqua dove, Rufous-tailed
+                    weaver, and Rosy-throated long claw.</p>
+            </div>
+
+            <div class="content-block">
+                <h2>Ngorongoro Crater Formation</h2>
+                <p>Ngorongoro Crater is approximately 20 kilometers wide, 600 meters deep, and covers an area of 300
+                    square kilometers.</p>
+                <p>Ngorongoro Crater was formed about 2 to 3 million years ago after the collapse of the Ngorongoro
+                    Mountains, whose cones collapsed inward after a major eruption, leaving an unbroken caldera.
+                    According to geologists, the Ngorongoro Mountains were the tallest in the world before they
+                    collapsed and erupted. The formation of the Ngorongoro Crater, along with the Olmoti and Empakai
+                    craters, dates back to the Mesozoic periods.</p>
+            </div>
+
+            <div class="content-block">
+                <h2>Olduvai Gorge and Laetoli</h2>
+                <p>The Olduvai Gorge and Laetoli are stunning historical sites within the Ngorongoro Conservation Area.
+                    The Olduvai Gorge is sometimes called the cradle of mankind. The Leakeys excavated the remains of
+                    ancient human beings. You can learn more about the history of man at this site.</p>
+                <p>The footprints of our ancestors were also found in a sedimentary rock in Laetoli. The footprints date
+                    back about 3 million years ago. You can visit Laetoli to learn more about human history. The Olduvai
+                    Gorge Museum houses every detail about the discoveries made at these sites. Tourists usually have a
+                    wonderful trip here.</p>
+            </div>
+
+            <div class="content-block">
+                <h2>Activities in the Ngorongoro Conservation Area</h2>
+
+                <h3>Game Drives</h3>
+                <p>Ngorongoro Conservation Area is the best place for wildlife safaris. Guests can embark on both
+                    morning and afternoon game drives in this protected area. Ngorongoro Crater boasts a large number of
+                    animals and birds.</p>
+
+                <h3>Cultural Tours</h3>
+                <p>While in the Ngorongoro Conservation Area, you won’t end up seeing wildlife only, but also the Maasai
+                    nomads. They have been in this area for over 19,000 years. The Maasai tribe is prominent in East
+                    Africa, and it is famous for its unique style of life.</p>
+                <p>They graze their livestock in the Ngorongoro Crater and other places. They have a unique dress code,
+                    delicious locally-made cuisines, lifestyle, culture, and traditions. A visit to their bomas is a
+                    truly memorable tour. They built their huts in the proper order of wives. You can join them in their
+                    traditional dances. The Maasai are good artists. They make handmade products such as jewelry and so
+                    on. You can support them.</p>
+
+                <h3>Visit Lake Magadi</h3>
+                <p>This is a shallow soda lake found in the southwest of the crater. Magadi is a Maasai word for salt.
+                    Lake Magadi is home to flamingos. It is an amazing place worth a visit.</p>
+                <p>During the dry season, Lake Magadi dries up, leaving large deposits of salt. The Maasai extract and
+                    use them for cooking purposes. Hyenas, jackals, and other predators lick on such deposits to
+                    supplement their food. Ngoitokitok Spring is one of Lake Magadi's water sources. You can take a walk
+                    in this breathtakingly marvelous spring and enjoy nature as well as the sightings of hippos in the
+                    Gerigor swamp.</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 4rem;">
+                <h3>Are you ready for an adventure in Tanzania?</h3>
+                <p>Triple Lions Expeditions organizes unforgettable safaris through Tanzanian spectacular destinations.
+                </p>
+                <a href="index.html#contact" class="btn-cta">Book Your Trip Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="TES1.png" alt="Triple Lions Expeditions"
+                        style="width: 200px; max-width: 100%; margin-bottom: 1rem;">
+                    <p>Your trusted partner for unforgettable safari and travel experiences in Tanzania and East Africa
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="index.html#testimonials">Testimonials</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Triple Lions Expeditions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
