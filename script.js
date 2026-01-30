@@ -1,4 +1,63 @@
-// Mobile Menu Toggle
+// ============================================
+// HERO SLIDESHOW
+// ============================================
+const slides = document.querySelectorAll('.hero-slideshow .slide');
+const indicators = document.querySelectorAll('.slide-indicators .indicator');
+let currentSlide = 0;
+let slideInterval;
+
+function showSlide(index) {
+    // Remove active class from all slides and indicators
+    slides.forEach(slide => slide.classList.remove('active'));
+    indicators.forEach(indicator => indicator.classList.remove('active'));
+    
+    // Update current slide index
+    currentSlide = index;
+    if (currentSlide >= slides.length) currentSlide = 0;
+    if (currentSlide < 0) currentSlide = slides.length - 1;
+    
+    // Add active class to current slide and indicator
+    if (slides[currentSlide]) slides[currentSlide].classList.add('active');
+    if (indicators[currentSlide]) indicators[currentSlide].classList.add('active');
+}
+
+function nextSlide() {
+    showSlide(currentSlide + 1);
+}
+
+function startSlideshow() {
+    slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+}
+
+function stopSlideshow() {
+    clearInterval(slideInterval);
+}
+
+// Initialize slideshow if elements exist
+if (slides.length > 0) {
+    // Add click events to indicators
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            stopSlideshow();
+            showSlide(index);
+            startSlideshow();
+        });
+    });
+    
+    // Start automatic slideshow
+    startSlideshow();
+    
+    // Pause slideshow on hover
+    const heroSection = document.querySelector('.hero');
+    if (heroSection) {
+        heroSection.addEventListener('mouseenter', stopSlideshow);
+        heroSection.addEventListener('mouseleave', startSlideshow);
+    }
+}
+
+// ============================================
+// MOBILE MENU TOGGLE
+// ============================================
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 const navMenu = document.querySelector('.nav-menu');
 
